@@ -13,8 +13,4 @@ class CallNativeUtils {
       {@required String method, dynamic aguments}) async {
     return _platform.invokeMethod(method, aguments);
   }
-
-  static void back(@required BuildContext context) {
-    Navigator.of(context).pop();
-  }
 }

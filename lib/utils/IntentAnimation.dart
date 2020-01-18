@@ -17,30 +17,38 @@ enum IntentAnimationOption {
 }
 
 class IntentAnimation {
-  static intentNomal(
+  static Future intentNomal(
       {@required BuildContext context,
       @required Widget screen,
       Widget exitScreen,
       @required IntentAnimationOption option,
       @required Duration duration}) {
-    Navigator.of(context).push(SlideRoute(
+    return Navigator.of(context).push(SlideRoute(
         page: screen,
         option: option,
         exitScreen: exitScreen,
         duration: duration));
   }
 
-  static intentPushReplacement(
+  static Future intentPushReplacement(
       {@required BuildContext context,
       @required Widget screen,
       Widget exitScreen,
       @required IntentAnimationOption option,
       @required Duration duration}) {
-    Navigator.of(context).pushReplacement(SlideRoute(
+    return Navigator.of(context).pushReplacement(SlideRoute(
         page: screen,
         option: option,
         exitScreen: exitScreen,
         duration: duration));
+  }
+
+  static bool intentBack({@required BuildContext context, result}) {
+    return Navigator.pop(context, result);
+  }
+
+  static bool intentBack1({@required BuildContext context, result}) {
+    return Navigator.of(context).pop();
   }
 }
 
