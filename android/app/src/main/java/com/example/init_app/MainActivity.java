@@ -32,6 +32,13 @@ public class MainActivity extends FlutterActivity implements RatingDialog.Rating
                         rateAuto();
                         break;
                     }
+                    case "sendMess": {
+                        Intent sendIntent = new Intent();
+                        sendIntent.setAction(Intent.ACTION_SEND);
+                        sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+                        sendIntent.setType("text/plain");
+                        startActivity(sendIntent);
+                    }
                 }
             }
         });

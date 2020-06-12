@@ -10,6 +10,10 @@ abstract class BasePresenter<V extends BaseView> {
   BasePresenter() {
     streamController = new HashMap();
   }
+  addStreamControllerBroadcast(k) {
+    streamController.putIfAbsent(
+        k, () => StreamController<BlocEvent>.broadcast());
+  }
 
   void addStreamController(k) {
     streamController.putIfAbsent(k, () => StreamController<BlocEvent>());

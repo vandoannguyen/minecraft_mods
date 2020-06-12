@@ -4,7 +4,6 @@ import 'package:init_app/utils/BaseView.dart';
 
 class HomePresenter extends BasePresenter {
   BaseView baseView;
-
   HomePresenter(this.baseView) : super();
 
   @override
