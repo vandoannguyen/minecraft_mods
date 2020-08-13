@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 enum IntentAnimationOption {
   LEFT_TO_RIGHT,
@@ -43,11 +43,11 @@ class IntentAnimation {
         duration: duration));
   }
 
-  static bool intentBack({@required BuildContext context, result}) {
+  static intentBack({@required BuildContext context, result}) {
     return Navigator.pop(context, result);
   }
 
-  static bool intentBack1({@required BuildContext context, result}) {
+  static void intentBack1({@required BuildContext context, result}) {
     return Navigator.of(context).pop();
   }
 }

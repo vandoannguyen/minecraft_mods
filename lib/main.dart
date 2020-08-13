@@ -1,7 +1,12 @@
+import 'package:admob_flutter/admob_flutter.dart';
+import 'package:facebook_audience_network/facebook_audience_network.dart';
 import 'package:flutter/material.dart';
 import 'package:init_app/common/Common.dart';
 
 import 'config.dart';
+import 'config_ads.dart';
+import 'loading/loading.dart';
+import 'utils/CallNativeUtils.dart';
 
 void main() {
   Common.config = config;
@@ -11,12 +16,19 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    FacebookAudienceNetwork.init(
+      testingId: "37b1da9d-b48c-4103-a393-2e095e734bd6", //optional
+    );
+    Admob.initialize(app_unit_id);
+    CallNativeUtils.setChannel("com.example.init_app");
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        fontFamily: "alt",
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Loading(),
     );
   }
 }
