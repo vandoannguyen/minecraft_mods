@@ -4,7 +4,7 @@ void onLoading(context) {
   showDialog(
     context: context,
     barrierDismissible: false,
-    builder: (BuildContext context) {
+    builder: (context) {
       return Dialog(
         backgroundColor: Colors.transparent,
         child: Container(

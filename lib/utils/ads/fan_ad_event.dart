@@ -7,6 +7,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:init_app/config_ads.dart';
 
+import 'dialog.dart';
+
 bool isInterstitialAdLoaded = false;
 bool isRewardedAdLoaded = false;
 bool isRewardedVideoComplete = false;
@@ -31,6 +33,7 @@ void loadRewardedVideoAd() {
 }
 
 void showInterstitialAd(context, void callBack()) {
+  onLoading(context);
   FacebookInterstitialAd.loadInterstitialAd(
     placementId:
         inter_id_fan, //"IMG_16_9_APP_INSTALL#2312433698835503_2650502525028617" YOUR_PLACEMENT_ID

@@ -33,7 +33,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.example.init_app"
+        applicationId "com.gunsmod.mcpe.newmaps"
         minSdkVersion 16
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()
@@ -61,4 +61,7 @@ dependencies {
     implementation 'androidx.annotation:annotation:1.0.0'
     compile project(path: ':ratedialog')
     implementation 'com.google.code.gson:gson:2.8.6'
+
+    implementation 'com.flurry.android:analytics:12.2.0@aar'
+    implementation 'com.android.billingclient:billing:2.1.0'
 }

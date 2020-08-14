@@ -81,14 +81,16 @@ class _ModScreenState extends State<ModScreen> implements BaseView {
   }
 
   void selectedIndex(int index) {
-    IntentAnimation.intentNomal(
-        context: context,
-        screen: ModsDetail(
-          keyCheck: widget.keyCheck,
-          data: isMods() ? mods[index] : maps[index],
-        ),
-        option: IntentAnimationOption.RIGHT_TO_LEFT,
-        duration: Duration(milliseconds: 800));
+    AdsUtils().clickADs(context, 70, () {
+      IntentAnimation.intentNomal(
+          context: context,
+          screen: ModsDetail(
+            keyCheck: widget.keyCheck,
+            data: isMods() ? mods[index] : maps[index],
+          ),
+          option: IntentAnimationOption.RIGHT_TO_LEFT,
+          duration: Duration(milliseconds: 800));
+    });
   }
 
   @override

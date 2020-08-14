@@ -29,9 +29,12 @@ class _LoadingState extends State<Loading> implements BaseView {
       resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
-          Image.asset(
-            imageBackgroundLoading,
-            fit: BoxFit.fill,
+          Container(
+            alignment: Alignment.center,
+            child: Image.asset(
+              imageBackgroundLoading,
+              fit: BoxFit.fill,
+            ),
           ),
           Positioned(
               bottom: 10,

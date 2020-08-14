@@ -18,9 +18,12 @@ class _HomePageState extends State<HomePage> implements BaseView {
       resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
-          Image.asset(
-            "assets/images/back_groundhome.png",
-            fit: BoxFit.fill,
+          Container(
+            alignment: Alignment.center,
+            child: Image.asset(
+              "assets/images/back_groundhome.png",
+              fit: BoxFit.fill,
+            ),
           ),
           Positioned(
             left: 0,
@@ -34,7 +37,7 @@ class _HomePageState extends State<HomePage> implements BaseView {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         GestureDetector(
-                          onTap: pressMods,
+                          onTap: () => pressMods(context),
                           child: Container(
                             child: Column(
                               children: [
@@ -55,7 +58,7 @@ class _HomePageState extends State<HomePage> implements BaseView {
                           ),
                         ),
                         GestureDetector(
-                          onTap: pressMaps,
+                          onTap: () => pressMaps(context),
                           child: Container(
                             child: Column(
                               children: [
@@ -102,8 +105,8 @@ class _HomePageState extends State<HomePage> implements BaseView {
     return TextStyle(color: Colors.white, fontSize: 18);
   }
 
-  void pressMaps() {
-    AdsUtils().clickADs(context, 80, () {
+  void pressMaps(ctx) {
+    AdsUtils().clickADs(ctx, 80, () {
       IntentAnimation.intentNomal(
           context: context,
           screen: ModScreen(keyCheck: "Maps"),
@@ -112,8 +115,8 @@ class _HomePageState extends State<HomePage> implements BaseView {
     });
   }
 
-  void pressMods() {
-    AdsUtils().clickADs(context, 80, () {
+  void pressMods(ctx) {
+    AdsUtils().clickADs(ctx, 80, () {
       IntentAnimation.intentNomal(
           context: context,
           screen: ModScreen(),
